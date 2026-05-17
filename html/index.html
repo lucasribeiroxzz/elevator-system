@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="elevator-panel" class="hidden">
+        <div class="panel-container">
+            <div class="panel-header">
+                <div class="header-icon">
+                    <i id="elevator-icon" class="fa-solid fa-elevator"></i>
+                </div>
+                <div class="header-info">
+                    <span class="header-label" id="elevator-label">Elevador</span>
+                    <span class="header-sub">Selecione o andar</span>
+                </div>
+                <button class="close-btn" id="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="panel-indicator">
+                <div class="indicator-line"></div>
+                <div class="indicator-dot"></div>
+                <div class="indicator-line"></div>
+            </div>
+            <div class="panel-body" id="floors-container"></div>
+            <div class="panel-footer">
+                <div class="footer-pulse"></div>
+                <span>Criado por Lucassx</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="transition-overlay" class="hidden">
+        <div class="transition-content">
+            <div class="transition-icon">
+                <i id="transition-arrow" class="fa-solid fa-arrow-up"></i>
+            </div>
+            <div class="transition-text" id="transition-text">Subindo...</div>
+            <div class="transition-floor" id="transition-floor">1º Andar</div>
+            <div class="transition-loader">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

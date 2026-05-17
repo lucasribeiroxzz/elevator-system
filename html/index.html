@@ -3,51 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevator System</title>
+    <title>Elevator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="blur-overlay" class="hidden"></div>
+
     <div id="elevator-panel" class="hidden">
-        <div class="panel-container">
+        <div class="panel-frame">
+            <div class="panel-brushed-top"></div>
+
             <div class="panel-header">
-                <div class="header-icon">
-                    <i id="elevator-icon" class="fa-solid fa-elevator"></i>
+                <div class="header-left">
+                    <div class="header-indicator"></div>
+                    <div class="header-text">
+                        <span class="header-label" id="elevator-label">Elevador</span>
+                        <span class="header-floor-info" id="header-floor-info">Selecione o destino</span>
+                    </div>
                 </div>
-                <div class="header-info">
-                    <span class="header-label" id="elevator-label">Elevador</span>
-                    <span class="header-sub">Selecione o andar</span>
-                </div>
-                <button class="close-btn" id="close-btn">
-                    <i class="fa-solid fa-xmark"></i>
+                <button class="close-btn" id="close-btn" aria-label="Fechar">
+                    <svg width="10" height="10" viewBox="0 0 10 10">
+                        <line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
                 </button>
             </div>
-            <div class="panel-indicator">
-                <div class="indicator-line"></div>
-                <div class="indicator-dot"></div>
-                <div class="indicator-line"></div>
+
+            <div class="panel-divider">
+                <div class="divider-line"></div>
             </div>
+
             <div class="panel-body" id="floors-container"></div>
+
             <div class="panel-footer">
-                <div class="footer-pulse"></div>
-                <span>Criado por Lucassx</span>
+                <span class="footer-credit" id="sys-id"></span>
             </div>
+
+            <div class="panel-brushed-bottom"></div>
         </div>
     </div>
 
     <div id="transition-overlay" class="hidden">
         <div class="transition-content">
-            <div class="transition-icon">
-                <i id="transition-arrow" class="fa-solid fa-arrow-up"></i>
+            <div class="transition-indicator-wrap">
+                <div class="transition-chevron" id="transition-chevron">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path id="chevron-path" d="M6 15L12 9L18 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
             </div>
-            <div class="transition-text" id="transition-text">Subindo...</div>
-            <div class="transition-floor" id="transition-floor">1º Andar</div>
-            <div class="transition-loader">
-                <div class="loader-bar"></div>
+            <div class="transition-label" id="transition-text">Subindo...</div>
+            <div class="transition-dest" id="transition-floor"></div>
+            <div class="transition-progress">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

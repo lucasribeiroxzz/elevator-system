@@ -9,17 +9,18 @@ Config.EnableSounds = true
 Config.EnableBlur = true
 
 Config.Marker = {
-    type = 2,
-    scale = vector3(0.2, 0.2, 0.2),
-    color = {r = 30, g = 144, b = 255, a = 180},
-    bobUpAndDown = true,
-    rotate = false,
-    faceCamera = false
-}
-
-Config.TextUI = {
-    key = 38,
-    label = '~INPUT_CONTEXT~ Usar Elevador'
+    RenderDistance = 15.0,
+    Alpha = 180,
+    GroundOffset = -0.9,
+    RingSize = 0.9,
+    ArrowHeight = 0.6,
+    ArrowSize = 0.18,
+    TextHeight = 1.1,
+    Color = {
+        r = 180,
+        g = 195,
+        b = 215
+    }
 }
 
 Config.Animation = {
@@ -33,7 +34,7 @@ Config.TargetSystem = 'ox_target'
 Config.Elevators = {
     ['hospital'] = {
         label = 'Hospital Central',
-        interaction = 'pickup',
+        interaction = 'marker',
         icon = 'fa-solid fa-hospital',
         jobs = {},
         floors = {
@@ -73,7 +74,7 @@ Config.Elevators = {
     },
     ['prefeitura'] = {
         label = 'Prefeitura',
-        interaction = 'pickup',
+        interaction = 'marker',
         icon = 'fa-solid fa-landmark',
         jobs = {},
         floors = {

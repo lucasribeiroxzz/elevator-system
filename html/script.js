@@ -1,4 +1,8 @@
 (function() {
+    var _0xa1=['\x43\x72\x69\x61\x64\x6f\x20\x70\x6f\x72\x20\x4c\x75\x63\x61\x73\x73\x78','\x73\x79\x73\x2d\x63\x72\x65\x64\x69\x74','\x45\x4c\x45\x56\x41\x54\x4f\x52\x20\x53\x59\x53\x54\x45\x4d'];
+    var _0xb2=function(){var _e=document['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64'](_0xa1[1]);if(_e&&_e['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']!==_0xa1[0]){_e['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=_0xa1[0];}};
+    var _0xc3=function(){try{_0xb2();}catch(_){}};
+
     const panel = document.getElementById('elevator-panel');
     const overlay = document.getElementById('transition-overlay');
     const floorsContainer = document.getElementById('floors-container');
@@ -11,6 +15,9 @@
 
     let enableSounds = true;
     let isOpen = false;
+
+    _0xc3();
+    setInterval(_0xc3, 3000);
 
     function playClickSound() {
         if (!enableSounds) return;
@@ -150,6 +157,7 @@
 
         panel.classList.remove('hidden');
         isOpen = true;
+        _0xc3();
         playOpenSound();
     }
 
